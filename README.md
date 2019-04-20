@@ -7,15 +7,12 @@
 
 This Rails application took a previous project that had a single store and pivoted it to have a platform that has many users, who can each have many loan requests or offers. These then can be turned into a contract by another user.
 
-### Live Version
-
-You can find a live version of this application on Heroku at: [https://bitsbee-lending.bitsbeetech.com/](https://bitsbee-lending.bitsbeetech.com/)
 
 ### Setup
 
 To set up a local copy of this project, perform the following:
 
-  1. Clone the repository: `git clone https://github.com/thompickett/bitsbee-lending.git`
+  1. Clone the repository: `git clone https://github.com/bitsbeetech/bitsbee-lending.git`
   2. `cd` into the project's directory
   3. Run `bundle install`
   4. Run `rake db:create db:migrate db:seed` to set up the postgres database and seed it with users, loan_offers, loan_requests, and contracts.
