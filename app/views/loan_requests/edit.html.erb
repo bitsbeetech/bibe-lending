@@ -1,0 +1,20 @@
+<div class="mainbody">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 row">
+        <h2>Do you need to update the details of your loan request?</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-5">
+      <%= form_for @loan_request do |f| %>
+        <%= f.label :amount, "Amount in Dollars:" %>
+        <%= f.text_field :amount, class:"form-control" %><br />
+        <%= f.label :rate, "Rate: " %>
+        <%= f.text_field :rate, class:"form-control" %><br />
+        <%= f.submit "That was easy" %>
+      <% end %>
+    </div>
+  </div>
+</div>

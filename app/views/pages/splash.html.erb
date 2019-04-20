@@ -1,0 +1,19 @@
+<%= render partial: "shared/banner" %>
+<div class="mainbody">
+  <div class="container">
+    <div id="featured">
+      <div class="featured-members-text">
+        <h3>FEATURED MEMBERS</h3>
+        <h5>Looking for guaranteed returns? These members have proven themselves with timely payments on previous loans.</h5>
+      </div>
+      <div class="autoplay" id="auto">
+        <% @featured_users.each do |user| %>
+          <div><%= link_to image_tag(user.image_path, size: "200"), user_loan_offers_path(username: user.username) %></div>
+        <% end %>
+      </div>
+      <div id="featured-list">
+        mobile list!
+      </div>
+    </div>
+  </div>
+</div>

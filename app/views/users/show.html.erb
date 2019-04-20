@@ -1,0 +1,72 @@
+<div class="container">
+	<div class="row user-dashboard">
+		<h1><%= @user.first_name %></h1>
+		<div class="col-md-4 stats">
+			<table class="table table-striped table-bordered">
+				<tr>
+					<td>
+						<b>Loan Offerings</b>
+					</td>
+					<td>
+						<b>#</b>
+					</td>
+				</tr>
+				<tr>
+					<td>Outstanding Loan Offerings</td>
+					<td><%= @user.loans_count("offers") %></td>
+				</tr>
+				<tr>
+					<td>Approved Loan Offerings</td>
+					<td><%= @user.approved_loans_count("offers") %></td>
+				</tr>
+				<tr>
+					<td>Total Invested in Loan Offerings</td>
+					<td><%= number_to_currency(@user.investment("offers")) %></td>
+				</tr>
+			<tr>
+				<td colspan="2">
+				</td>
+			</tr>
+				<tr>
+					<td>
+						<b>Loan Requests</b>
+					</td>
+					<td>
+						<b>#</b>
+					</td>
+				</tr>
+				<tr>
+					<td>Outstanding Loan Requests</td>
+					<td><%= @user.loans_count("requests") %></td>
+				</tr>
+				<tr>
+					<td>Approved Loan Requests</td>
+					<td><%= @user.approved_loans_count("requests") %></td>
+				</tr>
+				<tr>
+					<td>Total Owed in Loan Requests</td>
+					<td><%= number_to_currency(@user.investment("requests")) %></td>
+				</tr>
+				<tr>
+					<td colspan="2s">
+					</td>
+				</tr>
+				<tr>
+					<td><b>Portfolio Net Worth</b></td>
+					<td><b><%= number_to_currency(@user.net_worth) %></b></td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-3 user-menu">
+			<nav>
+				<ul class="nav nav-pills nav-stacked">
+					<li role="presentation"><%= link_to "All Users", users_path %></li>
+					<li role="presentation"><%= link_to "View #{@user.first_name}'s Loan Offers", user_loan_offers_path(@user.username) %></li>
+					<li role="presentation"><%= link_to "View #{@user.first_name}'s Loan Requests", user_loan_requests_path(@user.username) %></li>
+					<li role="presentation"><%= link_to "View #{@user.first_name}'s Contracts", user_contracts_path(@user.username) %></li>
+					<li role="presentation"><%= button_to "Deactivate #{@user.first_name}'s Account", user_path(@user.id), method: :delete, class:"deactivate" %></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
