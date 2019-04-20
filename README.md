@@ -2,7 +2,6 @@
 ## Built with Ruby on Rails
 
 
-This project was created as a part of the curriculum for the [Turing School of Software & Design](http://turing.io).
 
 ### Overview
 
